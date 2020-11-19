@@ -36,7 +36,7 @@ class _ListPageState extends State<ListPage> {
   }
 
   void loadData() async {
-    final list = await http.get('$baseUrl/pokemon?limit=9');
+    final list = await http.get('$baseUrl/pokemon?limit=30');
 
     if (list.statusCode != 200) {
       print('Status Code: ${list.statusCode}');
@@ -97,6 +97,7 @@ class _ListPageState extends State<ListPage> {
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text('Pokédex'),
       ),
       body: body,
